@@ -1,0 +1,24 @@
+[package]
+name = "sekiro-coop-net"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[features]
+default = []
+steam = []
+
+[dependencies]
+sekiro-sdk-bridge = { workspace = true }
+sekiro-coop-authority = { workspace = true }
+sekiro-coop-rollback = { workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+parking_lot = { workspace = true }
+tracing = { workspace = true }
+serde = { workspace = true }
+bincode = { workspace = true }
+
+[dev-dependencies]
+proptest = { workspace = true }

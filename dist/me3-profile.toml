@@ -1,0 +1,42 @@
+# me3 mod profile for sekiro-coop
+#
+# Loaded by the me3 mod loader (https://github.com/garyttierney/me3)
+# when the user selects the `sekiro-coop` profile in me3's launcher.
+#
+# Place this file at:
+#   <me3 install>\profiles\sekiro-coop.toml
+#
+# Adjust `sekiro_coop_dll` to the absolute path of `sekiro_coop.dll`
+# you built with `cargo build -p sekiro-coop-dll --release`.
+
+[profile]
+name = "sekiro-coop"
+game = "sekiro"
+description = "Two-player seamless co-op with rollback netcode."
+
+[[natives]]
+path = "sekiro_coop.dll"
+optional = false
+
+# File replacement for the EMEVD patch produced by `sekiro-coop-emevd`.
+# The tool writes `common.emevd.dcx` in the output dir you pass; point
+# me3 at that file so Sekiro loads the patched version instead of the
+# vanilla one.
+[[file_overrides]]
+target = "event/common.emevd.dcx"
+replacement = "patched/common.emevd.dcx"
+
+# Per-area EMEVD patches produced by the same tool — add additional
+# entries here as they're generated.
+# [[file_overrides]]
+# target = "event/m11_00_50_80.emevd.dcx"
+# replacement = "patched/m11_00_50_80.emevd.dcx"
+
+[env]
+# Matchmaking: set SEKIRO_COOP_PEER to `host` or `client` before
+# launching.  For direct-UDP sessions, also set SEKIRO_COOP_BIND and
+# SEKIRO_COOP_PEER_ADDR.
+# SEKIRO_COOP_PEER         = "host"
+# SEKIRO_COOP_BIND         = "0.0.0.0:28000"
+# SEKIRO_COOP_PEER_ADDR    = "203.0.113.42:28000"
+# SEKIRO_COOP_LOG          = "info,sekiro_coop=debug"

@@ -1,0 +1,38 @@
+[package]
+name = "sekiro-coop-dll"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lib]
+name = "sekiro_coop"
+crate-type = ["cdylib"]
+
+[features]
+default = []
+# Enables the hudhook-based ImGui overlay.  Requires hudhook's deps
+# and a DX11 window for actual rendering.
+overlay = ["hudhook"]
+
+[dependencies]
+sekiro-sdk-sys = { workspace = true }
+sekiro-sdk-core = { workspace = true, features = ["minhook"] }
+hudhook = { version = "0.8", optional = true }
+sekiro-sdk-bridge = { workspace = true }
+sekiro-coop-rollback = { workspace = true }
+sekiro-coop-authority = { workspace = true }
+sekiro-coop-net = { workspace = true }
+anyhow = { workspace = true }
+parking_lot = { workspace = true }
+once_cell = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+
+[target.'cfg(windows)'.dependencies]
+windows = { version = "0.56", features = [
+    "Win32_Foundation",
+    "Win32_System_LibraryLoader",
+    "Win32_System_SystemServices",
+    "Win32_System_Console",
+] }

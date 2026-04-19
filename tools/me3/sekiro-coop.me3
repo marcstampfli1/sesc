@@ -1,0 +1,18 @@
+profileVersion = "v1"
+
+[[supports]]
+game = "sekiro"
+
+[[natives]]
+path = "./sekiro-coop-mods/sekiro_coop.dll"
+optional = false
+enabled = true
+load_before = []
+load_after = []
+load_early = false
+
+[[packages]]
+enabled = true
+path = "./sekiro-coop-mods"
+load_after = []
+load_before = []

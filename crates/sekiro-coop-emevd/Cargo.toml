@@ -1,0 +1,21 @@
+[package]
+name = "sekiro-coop-emevd"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "sekiro-coop-emevd"
+path = "src/main.rs"
+
+[lib]
+name = "sekiro_coop_emevd"
+path = "src/lib.rs"
+
+[dependencies]
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+bytemuck = { workspace = true }

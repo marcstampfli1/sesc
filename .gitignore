@@ -1,0 +1,32 @@
+# Cargo
+/target
+**/*.rs.bk
+# NOTE: Cargo.lock is committed for reproducible builds of the mod binary.
+
+# Windows build artefacts
+*.pdb
+*.dll.lock
+
+# Logs
+*.log
+logs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS
+Thumbs.db
+.DS_Store
+
+# me3 runtime caches (regenerated on launch)
+tools/me3/cache/
+tools/me3/data/
+
+# UXM + Yabber pipeline outputs (see docs/HANDOFF.md §4). Never commit
+# extracted game assets — they are the user's Sekiro install.
+build/emevd/
+tools/uxm/
+tools/yabber/

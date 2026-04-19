@@ -1,0 +1,16 @@
+[package]
+name = "sekiro-sdk-bridge"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+sekiro-sdk-sys = { workspace = true }
+sekiro-sdk-core = { workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+parking_lot = { workspace = true }
+once_cell = { workspace = true }
+tracing = { workspace = true }
+serde = { workspace = true }

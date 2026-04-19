@@ -1,0 +1,18 @@
+[package]
+name = "peer-simulator"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "peer-simulator"
+path = "src/main.rs"
+
+[dependencies]
+sekiro-sdk-bridge = { workspace = true }
+sekiro-coop-net = { workspace = true }
+sekiro-coop-authority = { workspace = true }
+anyhow = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }

@@ -1,0 +1,54 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/sekiro-sdk-sys",
+    "crates/sekiro-sdk-core",
+    "crates/sekiro-sdk-bridge",
+    "crates/sekiro-coop-rollback",
+    "crates/sekiro-coop-authority",
+    "crates/sekiro-coop-net",
+    "crates/sekiro-coop-dll",
+    "crates/sekiro-coop-emevd",
+    "tools/aob-scanner",
+    "tools/determinism-probe",
+    "tools/live-inspector",
+    "tools/peer-simulator",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.78"
+license = "AGPL-3.0-or-later"
+publish = false
+
+[workspace.dependencies]
+sekiro-sdk-sys = { path = "crates/sekiro-sdk-sys" }
+sekiro-sdk-core = { path = "crates/sekiro-sdk-core" }
+sekiro-sdk-bridge = { path = "crates/sekiro-sdk-bridge" }
+sekiro-coop-rollback = { path = "crates/sekiro-coop-rollback" }
+sekiro-coop-authority = { path = "crates/sekiro-coop-authority" }
+sekiro-coop-net = { path = "crates/sekiro-coop-net" }
+sekiro-coop-emevd = { path = "crates/sekiro-coop-emevd" }
+
+anyhow = "1"
+thiserror = "1"
+bincode = "1.3"
+serde = { version = "1", features = ["derive"] }
+parking_lot = "0.12"
+bytemuck = { version = "1", features = ["derive"] }
+once_cell = "1"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+quick-xml = "0.31"
+proptest = { version = "=1.4.0", default-features = false, features = ["std"] }
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+panic = "abort"
+strip = "symbols"
+
+[profile.dev]
+opt-level = 1

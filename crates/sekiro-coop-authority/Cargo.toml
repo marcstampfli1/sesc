@@ -1,0 +1,21 @@
+[package]
+name = "sekiro-coop-authority"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+sekiro-sdk-sys = { workspace = true }
+sekiro-sdk-core = { workspace = true }
+sekiro-sdk-bridge = { workspace = true }
+sekiro-coop-rollback = { workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+parking_lot = { workspace = true }
+tracing = { workspace = true }
+serde = { workspace = true }
+
+[dev-dependencies]
+sekiro-coop-emevd = { workspace = true }
+proptest = { workspace = true }

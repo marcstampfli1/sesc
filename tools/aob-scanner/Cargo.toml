@@ -1,0 +1,16 @@
+[package]
+name = "aob-scanner"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "aob-scanner"
+path = "src/main.rs"
+
+[dependencies]
+sekiro-sdk-sys = { workspace = true }
+anyhow = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
